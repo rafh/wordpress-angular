@@ -1,0 +1,31 @@
+@import url( 'https://fonts.googleapis.com/css?family=Lato:400,900|Libre+Franklin:400,900|Open+Sans');
+$font-lato: Lato, sans-serif;
+$font-libre: Libre Franklin, sans-serif;
+$breakpoints: ( sm: 500px, md: 800px, lg: 1200px );
+@mixin break($size) {
+     @media (min-width: map-get($breakpoints, $size)){
+        @content;
+    }
+}
+@mixin font-size($font-size: 17) {
+    font-size: #{$font-size}px;
+    font-size: #{$font-size / 10}rem;
+}
+
+body,
+html {
+    font-family: $font-lato;
+    height: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+}

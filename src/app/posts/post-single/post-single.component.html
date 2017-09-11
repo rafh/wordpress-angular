@@ -1,0 +1,8 @@
+<div *ngIf="post">
+    <img *ngIf="post._embedded['wp:featuredmedia'] !== undefined" src="{{post._embedded['wp:featuredmedia'][0].source_url}}"/>
+    <h1>{{ post.title.rendered }}</h1>
+    <div [innerHTML]="post.content.rendered"></div>
+</div>
+<div *ngIf="!post">
+  no post found
+</div>
